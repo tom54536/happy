@@ -1,0 +1,299 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Charm:wght@400;700&family=Prompt:wght@300;400;700&display=swap');
+
+/* --- Overlay Styles (NEW) --- */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    z-index: 99999;
+    transition: opacity 0.5s ease;
+    cursor: pointer;
+}
+
+.overlay.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.overlay-content {
+    animation: zoomIn 1s ease-out;
+}
+
+.overlay-content h2 {
+    font-family: 'Charm', cursive;
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+
+.overlay-content p {
+    font-size: 1.2em;
+    font-weight: 300;
+}
+
+#startButton {
+    padding: 15px 40px;
+    margin-top: 30px;
+    font-size: 1.5em;
+    font-weight: bold;
+    border: 3px solid #ffffff;
+    border-radius: 50px;
+    background-color: transparent;
+    color: #ffffff;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#startButton:hover {
+    background-color: #ff47d7;
+    color: #ffffff;
+}
+
+@keyframes zoomIn {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+/* --- General Styles --- */
+body {
+    margin: 0;
+    font-family: 'Prompt', sans-serif;
+    background-color: #e0f7fa; /* Light blue background */
+    color: #000; /* Black text */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+    
+}
+
+.anniversary-container {
+    max-width: 900px;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 25px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    padding: 50px;
+    text-align: center;
+    animation: fadeIn 2s ease-in-out;
+    position: relative;
+    z-index: 10;
+}
+
+/* --- Header --- */
+header h1 {
+    font-family: 'Charm', cursive;
+    color: #e91e63; /* Pink */
+    font-size: 5em;
+    margin: 0;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+header h2 {
+    font-family: 'Prompt', sans-serif;
+    font-weight: 300;
+    color: #c2185b; /* Darker pink */
+    font-size: 2em;
+    margin-top: 10px;
+}
+
+/* --- Gallery Slideshow --- */
+.gallery-section {
+    margin: 40px 0;
+}
+
+.slideshow-container {
+    max-width: 700px;
+    position: relative;
+    margin: auto;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.mySlides {
+    display: none;
+}
+
+.mySlides img {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+    display: block;
+}
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 2em;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+}
+
+/* Dots */
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+    background-color: #717171;
+}
+
+/* --- Message Section --- */
+.message-section {
+    margin: 50px 0;
+}
+
+.message-section h3 {
+    font-family: 'Charm', cursive;
+    font-size: 2.5em;
+    color: #0d47a1; /* Dark blue */
+}
+
+.message-section p {
+    font-size: 1.2em;
+    line-height: 1.8;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* --- Counter Section --- */
+.counter-section {
+    margin: 50px 0;
+}
+
+.counter-box {
+    background-color: #b3e5fc; /* Lighter blue */
+    padding: 25px;
+    border-radius: 15px;
+    border: 2px dashed #0277bd;
+    display: inline-block;
+}
+
+.counter-box h4 {
+    margin: 0 0 15px 0;
+    font-size: 1.5em;
+    color: #01579b;
+}
+
+.days-text {
+    font-family: 'Charm', cursive;
+    font-size: 4em;
+    color: #e91e63; /* Pink */
+    font-weight: bold;
+    animation: pulse 2s infinite ease-in-out;
+}
+
+/* --- Footer --- */
+footer {
+    margin-top: 50px;
+    font-size: 0.9em;
+    color: #757575;
+}
+
+/* --- Keyframe Animations --- */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* --- Heart Animation --- */
+.heart-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+.heart {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background-color: #ff4081; /* Pink heart color */
+    transform: rotate(-45deg);
+    animation: heart-fall linear infinite;
+    opacity: 0;
+}
+
+.heart::before, .heart::after {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background-color: #ff4081;
+    border-radius: 50%;
+}
+
+.heart::before {
+    top: -12.5px;
+    left: 0;
+}
+
+.heart::after {
+    left: 12.5px;
+    top: 0;
+}
+
+@keyframes heart-fall {
+    0% {
+        transform: translateY(0) rotate(-45deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh) rotate(315deg);
+        opacity: 0;
+    }
+}
